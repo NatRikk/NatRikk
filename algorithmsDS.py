@@ -19,32 +19,40 @@ else:
 #--------------------------------------------------------------------------------------------------------
 
 #Binary search algorithm example ------------------------------------------------------------------------
-def binary_search(arr, target):
+def binary_search(numbers, key):
+    # Variables to hold the low, middle and high indices
+    # of the area being searched. Starts with entire range.
     low = 0
-    high = len(arr) - 1
-    comparisons = 0  # Initialize comparison count
+    mid = len(numbers) // 2
+    high = len(numbers) - 1
+   
+    # Loop until "low" passes "high"
+    while (high >= low):
+        # calculate the middle index
+        mid = (high + low) // 2
 
-    while low <= high:
-        mid = (low + high) // 2
-        comparisons += 1  # Increment comparison count
-
-        if arr[mid] == target:
-            return mid, comparisons  # Found target
-        elif arr[mid] < target:
+        # Cut the range to either the left or right half,
+        # unless numbers[mid] is the key
+        if (numbers[mid] < key):
             low = mid + 1
-        else:
+      
+        elif (numbers[mid] > key):
             high = mid - 1
+      
+        else:
+            return mid   
+   
+    return -1 # not found
 
-    return -1, comparisons  # Target not found
-
-# Example usage
-numbers = [1, 3, 5, 7, 9, 11, 13, 15]
-target_number = 7
-
-index, comparison_count = binary_search(numbers, target_number)
-
-if index != -1:
-    print(f"Number found at index {index} with {comparison_count} comparisons.")
+# Main program to test the binary_search() function   
+numbers = [2, 4, 7, 10, 11, 32, 45, 87]
+print('NUMBERS:', numbers)
+     
+key = int(input('Enter an integer value: '))
+key_index = binary_search(numbers, key)
+     
+if (key_index == -1):
+    print('%d was not found.' % key)
 else:
-    print(f"Number not found. Total comparisons made: {comparison_count}.")
+    print('Found %d at index %d.' % (key, key_index))
 #---------------------------------------------------------------------------------------------------------
