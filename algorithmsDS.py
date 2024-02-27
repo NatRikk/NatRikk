@@ -1,20 +1,21 @@
 #Linear Search algorithm example ------------------------------------------------------------------------
-def linear_search(arr, target):
-    for i in range(len(arr)):
-        if arr[i] == target:
-            return i  # Return the index if found
-    return -1  # Return -1 if not found
+def linear_search(numbers, key):
+    for i in range(len(numbers)):
+       if (numbers[i] == key):
+           return i
+    return -1  # not found
 
-# Example usage
-numbers = [3, 5, 2, 8, 6, 7, 4]
-target_number = 7
-
-result = linear_search(numbers, target_number)
-
-if result != -1:
-    print(f"Number found at index {result}")
+# Main program to test the linear_search() method   
+numbers = [2, 4, 7, 10, 11, 32, 45, 87]
+print('NUMBERS:', numbers)
+     
+key = int(input('Enter an integer value: '))
+key_index = linear_search(numbers, key)
+     
+if (key_index == -1):
+    print('%d was not found.' % key)
 else:
-    print("Number not found in the list.")
+    print('Found %d at index %d.' % (key, key_index))
 #--------------------------------------------------------------------------------------------------------
 
 #Binary search algorithm example ------------------------------------------------------------------------
