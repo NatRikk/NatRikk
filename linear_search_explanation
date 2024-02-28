@@ -1,0 +1,21 @@
+def linear_search(numbers, key):# This line defines a function named linear_search. It takes two parameters: numbers, which is...
+    #...expected to be a list of numbers, and key, which is the number you're searching for in the list.
+
+    for i in range(len(numbers)):# iterates over the indices of the numbers list;generates a sequence of numbers starting from 0 to len()
+       if (numbers[i] == key):# this line checks if the element at the current index 'i' in the 'numbers' list is equal to the 'key'.
+           return i# this is the index where the key was found in the list.
+    return -1  # not found
+
+# Main program to test the linear_search() method   
+numbers = [2, 4, 7, 10, 11, 32, 45, 87] # a list of integers 'numbers'. In whitch we will look for the 'key' value
+print('NUMBERS:', numbers) #prints: NUMBERS (our list 'numbers')
+     
+key = int(input('Enter an integer value: ')) #let us input 'key' value for the search
+key_index = linear_search(numbers, key)# linear_search is called with 'numbers' and the we provided key as arguments;...
+    #...The result (index of the key in 'numbers' or '-1') is stored in 'key_index'.
+
+if (key_index == -1):# This line checks if 'key_index' is '-1'. If it is, it indicates that the key was not found in the list.
+    print('%d was not found.' % key)# If 'key_index' is '-1', this line prints a message stating that the key was not found in the list.
+else:
+    print('Found %d at index %d.' % (key, key_index))# This line prints a message stating...
+    #...that the key was found and displays the index at which it was found.
