@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @NatRikk
+- 👋 Hi, I’m @NatRikk and I am a first year student of Drury University 
 - 👀 I’m interested in Game Development 
 - 🌱 I’m currently learning Python and C++
 - 💞️ I’m looking to collaborate on some game projects or anything I will find interesting 
